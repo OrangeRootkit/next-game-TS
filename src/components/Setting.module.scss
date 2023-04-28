@@ -1,0 +1,25 @@
+.wrapper {
+  width: 699px;
+  background: linear-gradient(180deg, #7f75f0 0%, #101f32 100%);
+  border-radius: 40px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.inner {
+  padding: 37px 0 19px;
+  background-color: #fff;
+  border-radius: 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.buttonWrapper {
+    margin-top: 19px;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 92px;
+    width: 541px;
+}
