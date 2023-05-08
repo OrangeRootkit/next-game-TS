@@ -1,31 +1,46 @@
-import React, { FC, useState } from "react";
+import React, { FC, useEffect, useState } from "react";
 import s from "./Setting.module.scss";
 import Range from "../ui/Range/Range";
 import Button from "../ui/Button/Button";
-import Link from "next/link";
+import { useRouter } from "next/router";
+
+const AMOUNT = ["2", "3", "4", "5"];
+const GAMEVAR = ["A", "9", "19", "50", "99", "999"];
 
 const Settings: FC = () => {
-  const [valueRange, setValueRange] = useState<string>("");
+  const [valueRange, setValueRange] = useState<string>("5");
+  const [varRange, setVarRange] = useState<string>("6");
+  const [gameVariant, setGameVariant] = useState<string>("999");
   const [asc_active, setAsc] = useState<boolean>(true);
   const [des_active, setDes] = useState<boolean>(false);
+  const [dir, setDir] = useState<string>("asc");
+  const router = useRouter();
 
   const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
     const target = e.target as HTMLButtonElement;
-
     if (target.name === "asc") {
       setAsc(true);
       setDes(false);
+      setDir("asc");
+      return target.name;
     } else if (target.name === "des") {
-      setAsc(false);
-      setDes(true);
+      setAsc(!true);
+      setDes(!false);
+      setDir("des");
+      return target.name;
     }
   };
 
-  const rangeHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
-    console.log("hi");
-    console.log(e.target.value);
-    console.log(e.target);
+  const rangeAmount = (e: React.ChangeEvent<HTMLInputElement>) => {
     setValueRange(e.target.value);
+  };
+  const rangeVar = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setVarRange(e.target.value);
+    setGameVariant(GAMEVAR[+e.target.value - 1]);
+  };
+
+  const startGame = () => {
+    router.push(`/${dir}?amount+${valueRange}?var${gameVariant}`);
   };
 
   return (
@@ -34,15 +49,16 @@ const Settings: FC = () => {
         <Range
           text={"Кол-во предметов"}
           small={true}
-          optionList={["2", "3", "4", "5"]}
-          rangeHandler={rangeHandler}
-          // onChange={() => setValueRange(!valueRange)}
+          optionList={AMOUNT}
+          rangeHandler={rangeAmount}
+          value={valueRange}
         />
         <Range
           text={"Кол-во предметов"}
           small={false}
-          rangeHandler={rangeHandler}
-          optionList={["A", "9", " 19", " 50", "99", "999"]}
+          rangeHandler={rangeVar}
+          optionList={GAMEVAR}
+          value={varRange}
         />
         <div className={s.buttonWrapper}>
           <Button
@@ -66,22 +82,19 @@ const Settings: FC = () => {
             again={false}
             handler={handleClick}
             name="des"
-            // onClick={(e) => chooseAsc(e)}
           ></Button>
         </div>
-        <Link href={"/GamePage"}>
-          <Button
-            text={"Играть"}
-            des={false}
-            des_active={false}
-            asc={false}
-            asc_active={false}
-            play={true}
-            again={false}
-            handler={handleClick}
-            name="play"
-          ></Button>
-        </Link>
+        <Button
+          text={"Играть"}
+          des={false}
+          des_active={false}
+          asc={false}
+          asc_active={false}
+          play={true}
+          again={false}
+          handler={startGame}
+          name="play"
+        ></Button>
       </div>
     </div>
   );

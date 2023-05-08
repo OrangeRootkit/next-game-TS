@@ -26,8 +26,6 @@ const Button: FC<ButtonProps> = ({
   name,
   ...props
 }) => {
-  console.log(props);
-
   return (
     <>
       <button
