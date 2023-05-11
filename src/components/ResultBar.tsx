@@ -14,9 +14,10 @@ import { toyArr } from "../kit/items";
 type ResultBarProps = {
   backGround: any;
   settings: any;
+  minNumber: number;
 };
 
-const ResultBar = ({ backGround, settings }: ResultBarProps) => {
+const ResultBar = ({ backGround, settings, minNumber }: ResultBarProps) => {
   const bar =
     backGround.src.indexOf("backgroundCookies") > -1
       ? Maskgroup
@@ -70,9 +71,9 @@ const ResultBar = ({ backGround, settings }: ResultBarProps) => {
               <div key={i} className={s.scorePlace}></div>
             ))}
             {result.map((el, i) => (
-              <div className={s.scorePlace}>
+              <div className={s.scorePlace} key={i}>
                 <Image src={result[i]} alt="pic" key={i} />
-                <span className={s.gameText}>{i}</span>
+                <span className={s.gameText}>{minNumber}</span>
               </div>
             ))}
           </div>

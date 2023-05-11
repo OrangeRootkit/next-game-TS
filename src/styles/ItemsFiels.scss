@@ -13,6 +13,7 @@ $indent: 160px;
   height: 170px;
   position: absolute;
   transition: 0.2s;
+
   &__1 {
     top: 130px;
     left: 0;
@@ -36,6 +37,17 @@ $indent: 160px;
   &:hover {
     scale: 1.05;
     transition: 0.2s;
+    cursor: pointer;
+  }
+
+  &__right {
+    opacity: 0.2;
+
+    &:hover {
+      scale: 1;
+      transition: 0.2s;
+      cursor: auto;
+    }
   }
 }
 

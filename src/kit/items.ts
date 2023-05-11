@@ -10,6 +10,6 @@ import heartRed from "../../public/image/items/heartRed.png";
 import wheelOrange from "../../public/image/items/wheelOrange.png";
 import wheelPink from "../../public/image/items/wheelPink.png";
 
-export const coinsArr = [coinLeft, coinRigth, coinStraight];
-export const cookieArr = [cookieChockolate, cookieDouble, cookieStar];
+export const coinsArr = [coinLeft, coinRigth, coinStraight, coinLeft, coinRigth];
+export const cookieArr = [cookieChockolate, cookieDouble, cookieStar,cookieChockolate,cookieDouble];
 export const toyArr = [ballGreen, heartBlue, heartRed, wheelOrange, wheelPink];

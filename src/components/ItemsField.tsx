@@ -1,11 +1,11 @@
-import React, { FC } from "react";
+import React, { FC,useState } from "react";
 import clsx from "clsx";
-import s from "./ItemsFiels.module.scss";
 import Image from "next/image";
 import { coinsArr } from "../kit/items";
 import { cookieArr } from "../kit/items";
 import { toyArr } from "../kit/items";
 import ResultBar from "../components/ResultBar";
+import { makeRandomArray } from "@/helper/makeRandomArray";
 
 type ItemsFieldProps = {
   valueRange?: string;
@@ -17,33 +17,67 @@ const ItemsField: FC<ItemsFieldProps> = ({
   backGround,
   settings,
 }: ItemsFieldProps) => {
-  console.log(settings);
-
   const { dir, amount, variant } = settings;
-  console.log(dir);
-  console.log(amount);
-  console.log(variant);
+  const tempArray = makeRandomArray(+amount + 1, 0, variant);
 
-  const itemsVariant =
+  const [minNumber, setMinNumber] = useState(Math.min(...tempArray));
+  const [randomArray, setRandomArray] = useState(
+    tempArray.filter((el: any) => el !== minNumber)
+  );
+  const [tempRandomArray, setTempRandomArray] = useState(
+    tempArray.filter((el: any) => el !== minNumber)
+  );
+  const [addMinArr, setAddMinArr] = useState<any>([]);
+
+  let itemsVariant =
     backGround.src.indexOf("backgroundCookies") > -1
       ? cookieArr
       : backGround.src.indexOf("backgrounCoins") > -1
       ? coinsArr
       : toyArr;
 
-  console.log(s);
+  itemsVariant = itemsVariant.slice(0, +amount);
+
+  const handleClick = (e: any) => {
+    const chosenNumber = +e.currentTarget.children[1].innerText;
+    if (chosenNumber === Math.min(...tempRandomArray)) {
+      setAddMinArr([randomArray.indexOf(chosenNumber), ...addMinArr]);
+      setTempRandomArray(
+        tempRandomArray.filter((el: any) => el !== chosenNumber)
+      );
+    }
+  };
 
   return (
     <>
       <div className="wrapper">
         {itemsVariant.map((el, i) => (
-          <div className={clsx("itemWrapper", `itemWrapper__${i + 1}`)}>
+          <div
+            id={`${randomArray[i]}`}
+            key={i}
+            className={
+              addMinArr.includes(i)
+                ? clsx(
+                    "itemWrapper",
+                    `itemWrapper__${i + 1}`,
+                    `itemWrapper__right`
+                  )
+                : clsx("itemWrapper", `itemWrapper__${i + 1}`)
+            }
+            onClick={(e) => handleClick(e)}
+          >
             <Image src={el} alt="pic" />
-            <span className={clsx("gameText", `gameText__${i + 1}`)}>{i}</span>
+            <span className={clsx("gameText", `gameText__${i + 1}`)}>
+              {randomArray[i]}
+            </span>
           </div>
         ))}
       </div>
-      <ResultBar backGround={backGround} settings={settings} />
+      <ResultBar
+        backGround={backGround}
+        settings={settings}
+        minNumber={minNumber}
+      />
     </>
   );
 };

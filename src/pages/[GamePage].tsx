@@ -1,16 +1,11 @@
 import React from "react";
 import s from "../styles/GamePage.module.scss";
-import ResultBar from "../components/ResultBar";
-import backgrounCoins from "../../public/image/background/backgrounCoins.png";
-import backgroundCookies from "../../public/image/background/backgroundCookies.jpg";
-import backgroundTrees from "../../public/image/background/backgroundTrees.png";
 import ItemsField from "../components/ItemsField";
 import Modal from "../components/Modal";
 import Image from "next/image";
 import { useRouter } from "next/router";
 // import { backGroundArr } from "@/kit/items/background";
 import { backGroundArr } from "@/kit/background";
-
 
 type GamePageProps = {
   children: React.ReactNode;
@@ -27,7 +22,6 @@ const GamePage = ({ children, valueRange }: GamePageProps) => {
   const router = useRouter();
 
   const dir = router.query.GamePage;
-  console.log(dir);
   const amount = router.asPath.substring(
     router.asPath.indexOf("+") + 1,
     router.asPath.indexOf("+") + 2
