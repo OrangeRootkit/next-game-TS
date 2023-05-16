@@ -11,7 +11,7 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   play: boolean;
   again: boolean;
   name: string;
-  handler: (e: any) => any;
+  handler: (e: React.MouseEvent<HTMLButtonElement>) => void;
 }
 
 const Button: FC<ButtonProps> = ({

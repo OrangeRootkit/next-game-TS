@@ -7,7 +7,7 @@ interface RangeProps extends InputHTMLAttributes<HTMLInputElement> {
   optionList: string[];
   small: boolean;
   value: string;
-  rangeHandler: (e: React.ChangeEvent<HTMLInputElement>) => any;
+  rangeHandler: (e: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
 const Range: FC<RangeProps> = ({
@@ -49,7 +49,8 @@ const Range: FC<RangeProps> = ({
         name="range"
         type="range"
         min={small ? "2" : "1"}
-        max={small ? "5" : "6"}
+        // max={small ? "5" : "6"}
+        max={small ? "5" : "5"}
         step="1"
         value={value}
         onChange={(e) => rangeHandler(e)}

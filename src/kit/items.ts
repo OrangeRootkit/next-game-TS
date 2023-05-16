@@ -9,7 +9,8 @@ import heartBlue from "../../public/image/items/heartBlue.png";
 import heartRed from "../../public/image/items/heartRed.png";
 import wheelOrange from "../../public/image/items/wheelOrange.png";
 import wheelPink from "../../public/image/items/wheelPink.png";
+import heartRed1 from "../../public/image/items/heartRed1.png"
 
 export const coinsArr = [coinLeft, coinRigth, coinStraight, coinLeft, coinRigth];
 export const cookieArr = [cookieChockolate, cookieDouble, cookieStar,cookieChockolate,cookieDouble];
-export const toyArr = [ballGreen, heartBlue, heartRed, wheelOrange, wheelPink];
+export const toyArr = [ballGreen, heartBlue, heartRed1, wheelOrange, ballGreen];

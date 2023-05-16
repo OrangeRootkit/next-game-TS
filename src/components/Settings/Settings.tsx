@@ -1,11 +1,11 @@
-import React, { FC, useEffect, useState } from "react";
+import React, { FC, useState } from "react";
 import s from "./Setting.module.scss";
-import Range from "../ui/Range/Range";
-import Button from "../ui/Button/Button";
+import Range from "../../ui/Range/Range";
+import Button from "../../ui/Button/Button";
 import { useRouter } from "next/router";
 
 const AMOUNT = ["2", "3", "4", "5"];
-const GAMEVAR = ["A", "9", "19", "50", "99", "999"];
+const GAMEVAR = ["9", "19", "50", "99", "999"];
 
 const Settings: FC = () => {
   const [valueRange, setValueRange] = useState<string>("5");
@@ -62,7 +62,7 @@ const Settings: FC = () => {
         />
         <div className={s.buttonWrapper}>
           <Button
-            text={"По возрастанию"}
+            text={"Значения"}
             des={false}
             des_active={false}
             asc={true}

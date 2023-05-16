@@ -18,7 +18,7 @@
 
 .wrapper {
   margin: 0 auto;
-  position: relative;
+  position: fixed;
   width: 699px;
   background: linear-gradient(
     180deg,
@@ -28,8 +28,10 @@
   border-radius: 50px;
   margin: 0 auto;
   padding: 23px 20px 29px;
-  z-index: 1;
+  z-index: 10;
   text-align: center;
+  left: 50%;
+  transform: translate(-50%);
 }
 
 .inner {
