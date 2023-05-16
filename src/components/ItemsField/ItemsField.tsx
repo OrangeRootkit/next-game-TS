@@ -10,28 +10,28 @@ import Modal from "../Modal/Modal";
 
 type ItemsFieldProps = {
   backGround: string;
-  settings: {dir: string, amount: string, variant: string}
+  settings: { dir: string; amount: string; variant: string };
 };
 
 const ItemsField: FC<ItemsFieldProps> = ({
   backGround,
   settings,
 }: ItemsFieldProps) => {
-  console.log(settings);
-
   const { dir, amount, variant } = settings;
   const tempArray = makeRandomArray(+amount + 1, 0, +variant);
   const [resultNumbers, setResultNumbers] = useState<number[]>([]);
-  const [firstNumber] =
-    dir === "asc"
-      ? useState(Math.min(...tempArray))
-      : useState(Math.max(...tempArray));
+
+      const [firstNumber] = useState(dir !== "asc"? Math.min(...tempArray):Math.max(...tempArray) )
+
+
   const [randomArray] = useState(
     tempArray.filter((el: any) => el !== firstNumber)
   );
   const [tempRandomArray, setTempRandomArray] = useState(
     tempArray.filter((el: any) => el !== firstNumber)
   );
+
+
   const [addMinArr, setAddMinArr] = useState<number[]>([]);
   const [modal, setModal] = useState(false);
 

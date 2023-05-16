@@ -5,13 +5,9 @@ import Image from "next/image";
 import { useRouter } from "next/router";
 import { backGroundArr } from "@/kit/background";
 
-
-
-
 const GamePage = () => {
   const router = useRouter();
-  const dir:any = router.query.GamePage;
-  console.log(dir)
+  const dir: any = router.query.GamePage;
   const amount = router.asPath.substring(
     router.asPath.indexOf("+") + 1,
     router.asPath.indexOf("+") + 2

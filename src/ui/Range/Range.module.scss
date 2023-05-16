@@ -39,9 +39,9 @@
   height: 21px;
   border-radius: 10px;
   background-color: #ffd748;
+  appearance: none;
   -webkit-appearance: none;
   -moz-appearance: none;
-  appearance: none;
 
   &::-moz-range-thumb {
     background-color: #104987;
@@ -50,6 +50,16 @@
     height: 25px;
     border-radius: 25px;
     cursor: pointer;
+  }
+
+  &::-webkit-slider-thumb {
+    background-color: #104987;
+    border: none;
+    width: 25px;
+    height: 25px;
+    border-radius: 25px;
+    cursor: pointer;
+    appearance: none;
   }
 
   &__small {
