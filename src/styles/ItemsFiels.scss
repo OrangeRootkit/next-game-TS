@@ -69,10 +69,14 @@ $indent: 160px;
   .wrapper {
     width: 90%;
   }
+  .gameText {
+    font-size: 42px;
+  }
+
   $indent: 20%;
   .itemWrapper {
-    width: 100px;
-    height: 100px;
+    width: 85px;
+    height: 90px;
 
     &__1 {
       top: 130px;

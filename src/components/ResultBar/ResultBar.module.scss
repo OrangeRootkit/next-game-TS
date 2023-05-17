@@ -40,13 +40,6 @@
   top: 45px;
 }
 
-.image {
-  position: absolute;
-  width: 890px;
-  height: 223px;
-  z-index: -1;
-}
-
 .scorePlace {
   border-radius: 100%;
   width: 131px;
@@ -149,47 +142,45 @@
   text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
-
 @media (max-width: 912px) {
   .wrapperBar {
     width: 90%;
   }
 
-.wrapperResult {
-  width: 100%;
-  top: 14%;
-}
-
-.wrapperScore {
-  width: 100%;
-  top: 14%;
-}
-
-.scorePlace {
-  border-radius: 100%;
-  width: 100px;
-  height: 100px;
-  background-color: rgba(0, 0, 0, 0.06);
-  box-shadow: inset 0px 0px 25px 0px rgba(0, 0, 0, 0.25);
-}
-  .scorePlace__result {
-    width: 100px;
-    height: 100px;
-    position: relative;
+  .wrapperResult {
+    width: 100%;
+    top: 20%;
   }
-  
+
+  .wrapperScore {
+    width: 100%;
+    top: 20%;
+  }
+
+  .scorePlace {
+    width: 70px;
+    height: 70px;
+  }
+  .scorePlace__result {
+    width: 85px;
+    height: 85px;
+  }
+
   .scorePlace__result_empty {
-    width: 100px;
-    height: 100px;
-    opacity: 0;
+    width: 85px;
+    height: 85px;
   }
 
   .wrapperBg {
-    display: block;
-    position: relative;
-    justify-content: space-around;
-    height: 150px;
-    background-size: cover;
-    border-radius: 40px;
+    height: 120px;
+  }
+
+  .resultNumbers {
+    font-size: 38px;
+  }
+
+  .arrowWrapper {
+    width: 70%;
+    font-size: 32px;
   }
 }

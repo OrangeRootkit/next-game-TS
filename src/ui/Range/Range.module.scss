@@ -74,16 +74,24 @@
 }
 
 @media (max-width: 700px) {
+
+  .title {
+    font-size: 24px;
+  }
+  .option {
+    font-size: 20px;
+  }
+  
   .wrapper {
-    width: 300px;
+    width: 260px;
   }
 
   .range {
     &__small {
-      width: 300px;
+      width: 260px;
     }
     &__large {
-      width: 300px;
+      width: 260px;
     }
   }
 }
