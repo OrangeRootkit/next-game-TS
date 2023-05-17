@@ -1,5 +1,4 @@
 .wrapper {
-  font-family: Helvetica, Arial, sans-serif;
   width: 366px;
   padding: 0;
   text-align: center;
@@ -14,7 +13,6 @@
 }
 
 .title {
-  font-family: Helvetica, Arial, sans-serif;
   font-style: bold;
   font-weight: 700;
   font-size: 32px;
@@ -72,5 +70,20 @@
   &:hover {
     cursor: pointer;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  }
+}
+
+@media (max-width: 700px) {
+  .wrapper {
+    width: 300px;
+  }
+
+  .range {
+    &__small {
+      width: 300px;
+    }
+    &__large {
+      width: 300px;
+    }
   }
 }

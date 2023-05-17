@@ -148,3 +148,48 @@
   transform: translate(-50%, -60%);
   text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
+
+
+@media (max-width: 912px) {
+  .wrapperBar {
+    width: 90%;
+  }
+
+.wrapperResult {
+  width: 100%;
+  top: 14%;
+}
+
+.wrapperScore {
+  width: 100%;
+  top: 14%;
+}
+
+.scorePlace {
+  border-radius: 100%;
+  width: 100px;
+  height: 100px;
+  background-color: rgba(0, 0, 0, 0.06);
+  box-shadow: inset 0px 0px 25px 0px rgba(0, 0, 0, 0.25);
+}
+  .scorePlace__result {
+    width: 100px;
+    height: 100px;
+    position: relative;
+  }
+  
+  .scorePlace__result_empty {
+    width: 100px;
+    height: 100px;
+    opacity: 0;
+  }
+
+  .wrapperBg {
+    display: block;
+    position: relative;
+    justify-content: space-around;
+    height: 150px;
+    background-size: cover;
+    border-radius: 40px;
+  }
+}

@@ -1,12 +1,3 @@
-.overlay {
-  position: fixed;
-  background-color: rgba(0, 0, 0, 0.5);
-  width: 100%;
-  height: 100vh;
-  z-index: 1;
-  transition: 0.3s all;
-}
-
 .title {
   color: #feea80;
   font-weight: 700;
@@ -73,5 +64,18 @@
   &__downLeft {
     bottom: -40px;
     left: -100px;
+  }
+}
+
+@media (max-width: 912px) {
+  .wrapper {
+    width: 80%;
+  }
+  .title {
+    font-size: 60px;
+  }
+
+  .text {
+    font-size: 32px;
   }
 }

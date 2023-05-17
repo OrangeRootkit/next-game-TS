@@ -54,7 +54,7 @@ const Settings: FC = () => {
           value={valueRange}
         />
         <Range
-          text={"Кол-во предметов"}
+          text={"Значения"}
           small={false}
           rangeHandler={rangeVar}
           optionList={GAMEVAR}
@@ -62,7 +62,7 @@ const Settings: FC = () => {
         />
         <div className={s.buttonWrapper}>
           <Button
-            text={"Значения"}
+            text={"По возрастанию"}
             des={false}
             des_active={false}
             asc={true}

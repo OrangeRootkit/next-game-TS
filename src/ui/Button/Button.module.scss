@@ -40,7 +40,7 @@
     opacity: 1;
   }
   &__again {
-    background-color: #2BD600;
+    background-color: #2bd600;
     font-size: 32px;
     width: 263px;
     height: 68px;
@@ -48,6 +48,17 @@
     color: #fff;
     opacity: 1;
   }
-  
 }
 
+@media (max-width: 700px) {
+  .button {
+    font-size: 18px;
+
+    &__asc {
+      width: 45%;
+    }
+    &__des {
+      width: 45%;
+    }
+  }
+}

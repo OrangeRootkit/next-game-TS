@@ -23,3 +23,13 @@
   margin-bottom: 92px;
   width: 541px;
 }
+
+@media (max-width: 700px) {
+  .wrapper {
+    width: 80%;
+  }
+
+  .buttonWrapper {
+    width: 90%;
+  }
+}
